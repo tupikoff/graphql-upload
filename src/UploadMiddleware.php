@@ -71,7 +71,7 @@ class UploadMiddleware implements MiddlewareInterface
                     $items = &$items[$key];
                 }
 
-                $items = $request->getUploadedFiles()[$fileKey];
+                $items = $request->getUploadedFiles()[$fileKey] ?? $bodyParams[$fileKey];
             }
         }
 
